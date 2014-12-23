@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zk-jw-GGg">
-                                <rect key="frame" x="180" y="293" width="30" height="30"/>
+                                <rect key="frame" x="96" y="200" width="30" height="30"/>
                                 <state key="normal" title="Info">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,7 +26,7 @@
                                     <segue destination="P2t-n7-Cs0" kind="presentation" id="6uz-Ya-rDZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvt-Rj-46j">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvt-Rj-46j">
                                 <rect key="frame" x="374" y="293" width="40" height="30"/>
                                 <state key="normal" title="Goals">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,14 +55,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HcD-KL-EcX" firstAttribute="top" secondItem="Zs4-Ii-RoM" secondAttribute="bottom" constant="20" id="2hl-UO-8hg"/>
-                            <constraint firstAttribute="trailing" secondItem="gvt-Rj-46j" secondAttribute="trailing" constant="186" id="7ZO-Sy-CM2"/>
+                            <constraint firstAttribute="trailing" secondItem="gvt-Rj-46j" secondAttribute="trailing" constant="186" id="7oJ-Hz-wRO"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HcD-KL-EcX" secondAttribute="bottom" constant="359" id="AZD-Hf-BxO"/>
-                            <constraint firstItem="0zk-jw-GGg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="229" id="Ats-hw-7v0"/>
+                            <constraint firstItem="0zk-jw-GGg" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="200" id="Dpb-pZ-kSQ"/>
                             <constraint firstItem="HcD-KL-EcX" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="O0H-uc-Ysr"/>
-                            <constraint firstItem="0zk-jw-GGg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="180" id="VAv-KP-XHH"/>
                             <constraint firstItem="Zs4-Ii-RoM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="ZUb-JD-fmG"/>
+                            <constraint firstItem="0zk-jw-GGg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="80" id="aNB-rc-afJ"/>
                             <constraint firstItem="HcD-KL-EcX" firstAttribute="centerX" secondItem="Zs4-Ii-RoM" secondAttribute="centerX" id="f5T-xl-Syy"/>
-                            <constraint firstItem="gvt-Rj-46j" firstAttribute="baseline" secondItem="0zk-jw-GGg" secondAttribute="baseline" id="ujJ-an-H3r"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -82,14 +81,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jC-q0-k54">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jC-q0-k54">
                                 <rect key="frame" x="180" y="143" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">enough understanding of iOS and xCode that I can create my own apps, test them on an iPod touch and/or iPad, and submit them to the app store.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="croissants.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="L2U-ua-B1Q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="croissants.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="L2U-ua-B1Q">
                                 <rect key="frame" x="180" y="279" width="240" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What I'm hoping to get from this class" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tec-Ri-Xwj">
@@ -100,6 +99,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="L2U-ua-B1Q" secondAttribute="centerX" id="BT3-ge-zL1"/>
+                            <constraint firstAttribute="centerX" secondItem="1jC-q0-k54" secondAttribute="centerX" id="iuN-mW-xKA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WOH-GS-Eh6">
                         <barButtonItem key="rightBarButtonItem" title="Info" id="Jzl-C0-4Hk">
@@ -111,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYD-Ma-rua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2271" y="1473"/>
+            <point key="canvasLocation" x="2117" y="1188"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Yl9-7H-VBE">
@@ -143,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcz-56-OC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="1900"/>
+            <point key="canvasLocation" x="2117" y="1910"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1N3-0n-FYA">
@@ -216,6 +219,6 @@
         <image name="croissants.jpg" width="5184" height="3068"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ro8-UP-dZi"/>
+        <segue reference="6uz-Ya-rDZ"/>
     </inferredMetricsTieBreakers>
 </document>
