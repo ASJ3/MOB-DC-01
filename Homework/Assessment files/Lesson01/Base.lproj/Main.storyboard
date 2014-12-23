@@ -89,6 +89,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="croissants.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="L2U-ua-B1Q">
+                                <rect key="frame" x="180" y="279" width="240" height="128"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What I'm hoping to get from this class" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tec-Ri-Xwj">
                                 <rect key="frame" x="151" y="95" width="299" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -98,10 +101,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WOH-GS-Eh6">
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="Jzl-C0-4Hk">
+                            <connections>
+                                <segue destination="P2t-n7-Cs0" kind="show" id="ro8-UP-dZi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYD-Ma-rua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2154" y="1493"/>
+            <point key="canvasLocation" x="2271" y="1473"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Yl9-7H-VBE">
@@ -133,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcz-56-OC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1307" y="1985"/>
+            <point key="canvasLocation" x="1749" y="1900"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1N3-0n-FYA">
@@ -203,5 +213,9 @@
     </scenes>
     <resources>
         <image name="ProfilePic.jpg" width="466" height="622"/>
+        <image name="croissants.jpg" width="5184" height="3068"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ro8-UP-dZi"/>
+    </inferredMetricsTieBreakers>
 </document>
