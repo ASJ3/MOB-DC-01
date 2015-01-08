@@ -29,7 +29,7 @@ if age > 16 && age < 18 {
     println("you can drive")
 } else if age > 18 && age < 21 {
     println("You can drive and vote")
-} else if age > 21 {
+} else if age >= 21 {
     println("you can drive, vote and drink (but not at the same time!")
 }
 
@@ -66,6 +66,18 @@ for i in 3...37 {
 println("the 37th Fibonacci number is: \(newNum)")
 
 
+var fibNum = 9, current = 0, next = 1, result = 0
+
+for index in 0..<fibNum {
+    let tempVar = current
+    current = next
+    next = tempVar + current
+    result = tempVar
+    
+}
+println("the Fibonnaci number \(fibNum) is \(result)")
+
+
 
 // TODO: Print out "Hello {whatever the value of name is}, your name is {however long the string name is} characters long!. Use countElements()
 println("Hello \(Name), your name is \(countElements(Name)) characters long!")
@@ -76,7 +88,7 @@ var addition = 0
 
 for i in 1...100 {
     randomNum = rand()
-    addition = addition + Int(randomNum)
+    addition += Int(randomNum)
     //println(randomNum)
 }
 println(addition)
