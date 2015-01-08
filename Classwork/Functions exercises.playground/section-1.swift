@@ -79,27 +79,45 @@ addFib(20)
 
 // TODO: Write a function that takes in a number and prints out whether it is prime, composite or neither.
 func testNumType (numTest: Int) {
-    var maxNumToTest = numTest / 2 + 1
-    var isComposite: Bool = false
-    
+    var latestDenominator = 0
     if numTest <= 1 {
-        println("Number \(numTest) is neither prime nor composite")
+        println( "Number \(numTest) is neither prime nor composite")
     } else {
-        for i in 2...maxNumToTest {
-            if numTest % i == 0 { isComposite = true }
+        for i in 2...numTest {
+            if numTest % i == 0  && numTest != i {
+                latestDenominator = i
+                break
+            }
         }
-        if isComposite == true {
-            println("Number \(numTest) is a composite")
-        } else {
-            println("Number \(numTest) is a prime")
-        }
+            if latestDenominator != 0 {
+                println("Number \(numTest) is composite and its smallest denominator is \(latestDenominator)")
+            }
+            else {
+                println("Number \(numTest) is prime")
+            }
     }
 }
 
-testNumType(30)
+testNumType(8)
 
 
 // TODO: Write a function that prints out each of the first 20 fibonacci numbers and whether they are prime. (e.g. 0 is not prime or composite, 1 is prime, etc)
+//func fibPrime(primeTest: Int) {
+//    for i in 1...primeTest {
+//        var storeVal = fib(i)
+//        var returnType:String = testNumType2(storeVal)
+//        if returnType == "Number \(storeVal) is a prime"{
+//            println("The Fibonacci number \(i) is \(storeVal) and it is a prime number")
+//        } else {
+//            println("The Fibonacci number \(i) is \(storeVal)")
+//        }
+//    }
+//    
+//}
+//
+//fibPrime(20)
+
+
 
 // TODO: Write a function that takes in two numbers, a bill amount and an optional tip percentage (represented as a float, e.g. .2 = 20% tip). Return a tuple with the total bill amount and the tip amount (if included).
 
