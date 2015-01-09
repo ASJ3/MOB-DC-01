@@ -31,7 +31,7 @@ newString("Alexis")
 
 
 // TODO: Write a function accepts a string optional. If the string optional exists, print "Hello {value of string}!". If it doesn't, print "Hello world!"
-func optString(newString: String?) {
+func optString(newString: String?=nil) {
     if let sureValue = newString {
         println("Hello \(sureValue)")
     }
@@ -40,7 +40,7 @@ func optString(newString: String?) {
     }
 }
 
-optString(nil)
+optString()
 
 
 
@@ -59,17 +59,15 @@ func fib(n: Int) -> Int {
     return result
 }
 
-fib(9)
+var results = fib(0)
+println("results are \(results)")
 
 
 // TODO: Write a function that calls the above function in order to print the sum of the first 20 fibonacci numbers.
 func addFib(numberTimes: Int) {
     var addResults = 0
     for i in 1...numberTimes {
-        //println("index is now \(i)")
-        //println("the Fibonacci number \(i) is \(fib(i))")
         addResults += fib(i)
-        //println("The sum of the first \(i) Fibonacci numbers is: \(addResults)")
     }
     println("The sum of the first \(numberTimes) Fibonacci numbers is: \(addResults)")
 }
@@ -93,35 +91,81 @@ func testNumType (numTest: Int) {
                 println("Number \(numTest) is composite and its smallest denominator is \(latestDenominator)")
             }
             else {
-                println("Number \(numTest) is prime")
+                println( "Number \(numTest) is prime")
             }
     }
 }
 
-testNumType(8)
+testNumType(11)
 
 
 // TODO: Write a function that prints out each of the first 20 fibonacci numbers and whether they are prime. (e.g. 0 is not prime or composite, 1 is prime, etc)
-//func fibPrime(primeTest: Int) {
-//    for i in 1...primeTest {
-//        var storeVal = fib(i)
-//        var returnType:String = testNumType2(storeVal)
-//        if returnType == "Number \(storeVal) is a prime"{
-//            println("The Fibonacci number \(i) is \(storeVal) and it is a prime number")
-//        } else {
-//            println("The Fibonacci number \(i) is \(storeVal)")
-//        }
-//    }
-//    
-//}
-//
-//fibPrime(20)
+
+
+func fibPrime(primeTest: Int) {
+    for i in 1...primeTest {
+        var numTest = fib(i)
+        //println("the \(i) Fibonacci number is \(numTest)")
+        var latestDenominator = 0
+        if numTest <= 1 {
+            println( "Fibonnaci #\(i): \(numTest) is not prime or composite")
+        } else {
+            for i in 2...numTest {
+                if numTest % i == 0  && numTest != i {
+                    latestDenominator = i
+                    break
+                }
+            }
+            if latestDenominator != 0 {
+                println("Fibonnaci #\(i): \(numTest) is composite and its smallest denominator is \(latestDenominator)")
+            }
+            else {
+                println( "Fibonnaci #\(i): \(numTest) is prime")
+            }
+        }
+
+    }
+}
+
+fibPrime(20)
+
 
 
 
 // TODO: Write a function that takes in two numbers, a bill amount and an optional tip percentage (represented as a float, e.g. .2 = 20% tip). Return a tuple with the total bill amount and the tip amount (if included).
+func tipCalc(bill: Float, tip: Float?)->(totalAmount: Float, tipAmount: Float?) {
+    var finalAmount: Float
+    var finalTip: Float
+    if let calcTip = tip {
+        finalAmount = bill + calcTip * bill
+        finalTip = tip!
+        return (finalAmount, finalTip)
+    }
+    else {
+        return(bill, nil)
+    }
+}
+
+var newRes = tipCalc(100, nil)
+
+newRes.totalAmount
+
+
 
 // TODO: Write a function that takes in a string and returns a string that is the reverse of the input. Append two strings using the + operator.
+func inverseString(wordInput: String) ->String {
+    var arrayResult: [String] = []
+    for i in Array(wordInput) {
+        arrayResult.insert(String(i), atIndex: 0)
+    }
+    return "".join(arrayResult)
+}
+
+var newResult = inverseString("Hello everyone!")
+println(newResult)
+
+
+
 
 // BONUS TODO: Write a function that takes in an array of strings and a search term string. Return a boolean indicating whether the search term string exists in the array.
 
