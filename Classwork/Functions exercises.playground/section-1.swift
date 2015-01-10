@@ -206,3 +206,20 @@ checkPalindrome("noone")
 // BONUS TODO: Write a function that takes in two strings and returns a boolean indicating whether the two strings
 
 // BONUS TODO: Write a function that accepts two parameters, a string and a function that accepts a string and returns a string. Print the result of passing the string into the function 10 times.
+
+func addHello (inputString: String)->String {
+    return "Hello " + inputString
+}
+
+addHello("Aurele")
+
+func tenTimes (origString: String, inclFunc: String -> String) {
+    for i in 1...10{
+        println(inclFunc(origString))
+    }
+    
+}
+
+tenTimes("Aurelien", addHello)
+
+
