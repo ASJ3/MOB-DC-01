@@ -1,6 +1,8 @@
 // Playground - noun: a place where people can play
 // Lesson 05
 
+import Foundation
+
 // Complete these, in order, writing code under each TODO statement. Each statement calls for a function to be written, write each of them and then immediately call it after the function definition.
 
 // TODO: Write a function that prints out "Hello world!" 10 times
@@ -161,15 +163,45 @@ func inverseString(wordInput: String) ->String {
     return "".join(arrayResult)
 }
 
-var newResult = inverseString("Hello everyone!")
-println(newResult)
+var revString = "Hello everyone!"
 
-
+inverseString(revString)
 
 
 // BONUS TODO: Write a function that takes in an array of strings and a search term string. Return a boolean indicating whether the search term string exists in the array.
+func searchString (arrayRef: [String], stringToSearch: String)->Bool {
+    var answer = false
+    for i in arrayRef {
+        if i == stringToSearch {
+            answer = true
+            break
+        }
+    }
+    return answer
+}
+
+var newArray = ["Hello", "Goodbye", "How are you?"]
+
+searchString(newArray, "Good")
+searchString(newArray, "Hello")
+
 
 // BONUS TODO: Write a function that accepts a string and returns a boolean indicating whether a string is a palindrome (reads the same backwards or forwards).
+func checkPalindrome (stringChecked: String)->Bool {
+    var stringLowered = stringChecked.lowercaseString
+    var inversed = inverseString(stringLowered)
+    if inversed == stringLowered {
+        return true
+    } else {
+        return false
+    }
+    
+}
+
+checkPalindrome("noon")
+checkPalindrome("ABBA")
+checkPalindrome("Noon")
+checkPalindrome("noone")
 
 // BONUS TODO: Write a function that takes in two strings and returns a boolean indicating whether the two strings
 
