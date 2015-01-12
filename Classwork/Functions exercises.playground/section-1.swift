@@ -203,7 +203,18 @@ checkPalindrome("ABBA")
 checkPalindrome("Noon")
 checkPalindrome("noone")
 
-// BONUS TODO: Write a function that takes in two strings and returns a boolean indicating whether the two strings
+// BONUS TODO: Write a function that takes in two strings and returns a boolean indicating whether the two strings are identical
+func checkIdentical (string1: String, string2: String) {
+    if string1 == string2 {
+        println("The two strings are identical")
+    } else {
+        println("The two strings are different")
+    }
+    
+}
+
+checkIdentical("Alexis", "Alexis")
+
 
 // BONUS TODO: Write a function that accepts two parameters, a string and a function that accepts a string and returns a string. Print the result of passing the string into the function 10 times.
 
