@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5227A019-0C3C-48DA-831A-D3D3AC111BFD</string>
+	<string>E0A1F993-49B9-4024-B529-3B9BB871994D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Interface Builder and Functions</string>
+	<string>IB Coding Demo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>10A52EA4FBADB6C746B5260032017E5923CCC696</key>
 		<string>https://github.com/ASJ3/MOB-DC-01.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Lessons/Lesson06/Interface Builder and Functions/Interface Builder and Functions.xcodeproj</string>
+	<string>Classwork/IB Coding Demo/IB Coding Demo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>10A52EA4FBADB6C746B5260032017E5923CCC696</key>
-		<string>../../../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ASJ3/MOB-DC-01.git</string>
