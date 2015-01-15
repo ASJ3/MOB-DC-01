@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCX-9o-DJ2">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCX-9o-DJ2">
                                 <rect key="frame" x="277" y="28" width="46" height="30"/>
                                 <state key="normal" title="Create Cat">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,7 +27,7 @@
                                     <action selector="createCat:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rLI-gz-ADD"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVU-Cr-pLJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVU-Cr-pLJ">
                                 <rect key="frame" x="16" y="229" width="333" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -50,7 +51,7 @@
                                     <action selector="animalSetting:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="quS-TD-yZW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-RK-cRm">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-RK-cRm">
                                 <rect key="frame" x="277" y="126" width="46" height="30"/>
                                 <state key="normal" title="Create Dog">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,21 +86,21 @@
                                 <exclude reference="SIv-Ki-WDU"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="lLh-tq-sXO"/>
-                                <exclude reference="t0c-dv-25P"/>
-                                <exclude reference="zHE-S7-6nb"/>
-                                <exclude reference="8N3-VH-hog"/>
                                 <exclude reference="2dS-HC-D71"/>
                                 <exclude reference="KL5-fD-fpD"/>
                                 <exclude reference="doC-IO-osY"/>
                                 <exclude reference="whD-f1-hGC"/>
                                 <exclude reference="2fd-Hf-mKB"/>
                                 <exclude reference="ac4-L1-VuP"/>
+                                <exclude reference="HU1-wx-BWB"/>
+                                <exclude reference="sbk-aE-GPR"/>
+                                <exclude reference="lLh-tq-sXO"/>
+                                <exclude reference="t0c-dv-25P"/>
+                                <exclude reference="zHE-S7-6nb"/>
+                                <exclude reference="8N3-VH-hog"/>
                                 <exclude reference="697-bc-LWZ"/>
                                 <exclude reference="6dP-Dg-4RJ"/>
                                 <exclude reference="zf5-lD-GO3"/>
-                                <exclude reference="HU1-wx-BWB"/>
-                                <exclude reference="sbk-aE-GPR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -109,21 +110,21 @@
                                 <include reference="SIv-Ki-WDU"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="lLh-tq-sXO"/>
-                                <include reference="t0c-dv-25P"/>
-                                <include reference="zHE-S7-6nb"/>
-                                <include reference="8N3-VH-hog"/>
                                 <include reference="2dS-HC-D71"/>
                                 <include reference="KL5-fD-fpD"/>
                                 <include reference="doC-IO-osY"/>
                                 <include reference="whD-f1-hGC"/>
                                 <include reference="2fd-Hf-mKB"/>
                                 <include reference="ac4-L1-VuP"/>
+                                <include reference="HU1-wx-BWB"/>
+                                <include reference="sbk-aE-GPR"/>
+                                <include reference="lLh-tq-sXO"/>
+                                <include reference="t0c-dv-25P"/>
+                                <include reference="zHE-S7-6nb"/>
+                                <include reference="8N3-VH-hog"/>
                                 <include reference="697-bc-LWZ"/>
                                 <include reference="6dP-Dg-4RJ"/>
                                 <include reference="zf5-lD-GO3"/>
-                                <include reference="HU1-wx-BWB"/>
-                                <include reference="sbk-aE-GPR"/>
                             </mask>
                         </variation>
                     </view>
