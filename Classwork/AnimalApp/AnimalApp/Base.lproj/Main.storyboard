@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="AnimalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCX-9o-DJ2">
+                                <rect key="frame" x="277" y="28" width="46" height="30"/>
+                                <state key="normal" title="Create Cat">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createCat:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rLI-gz-ADD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVU-Cr-pLJ">
+                                <rect key="frame" x="16" y="229" width="333" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Kr-M4-Tfp">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Species" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPc-Xe-VAF">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-Ki-WDU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Create Animal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="animalSetting:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="quS-TD-yZW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-RK-cRm">
+                                <rect key="frame" x="277" y="126" width="46" height="30"/>
+                                <state key="normal" title="Create Dog">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createDog:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1qX-JD-AUP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Kr-M4-Tfp" firstAttribute="top" secondItem="zCX-9o-DJ2" secondAttribute="bottom" constant="36" id="2dS-HC-D71"/>
+                            <constraint firstItem="qPc-Xe-VAF" firstAttribute="top" secondItem="3Kr-M4-Tfp" secondAttribute="bottom" constant="23" id="2fd-Hf-mKB"/>
+                            <constraint firstItem="lQ6-RK-cRm" firstAttribute="trailing" secondItem="3Kr-M4-Tfp" secondAttribute="trailing" id="697-bc-LWZ"/>
+                            <constraint firstItem="lQ6-RK-cRm" firstAttribute="baseline" secondItem="zCX-9o-DJ2" secondAttribute="baseline" id="6dP-Dg-4RJ"/>
+                            <constraint firstItem="zCX-9o-DJ2" firstAttribute="top" secondItem="yVU-Cr-pLJ" secondAttribute="bottom" constant="49" id="8N3-VH-hog"/>
+                            <constraint firstItem="SIv-Ki-WDU" firstAttribute="top" secondItem="qPc-Xe-VAF" secondAttribute="bottom" constant="19" id="HU1-wx-BWB"/>
+                            <constraint firstItem="3Kr-M4-Tfp" firstAttribute="leading" secondItem="qPc-Xe-VAF" secondAttribute="leading" id="KL5-fD-fpD"/>
+                            <constraint firstItem="qPc-Xe-VAF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ac4-L1-VuP"/>
+                            <constraint firstItem="3Kr-M4-Tfp" firstAttribute="leading" secondItem="zCX-9o-DJ2" secondAttribute="leading" id="doC-IO-osY"/>
+                            <constraint firstItem="yVU-Cr-pLJ" firstAttribute="leading" secondItem="zCX-9o-DJ2" secondAttribute="leading" id="lLh-tq-sXO"/>
+                            <constraint firstItem="SIv-Ki-WDU" firstAttribute="centerX" secondItem="qPc-Xe-VAF" secondAttribute="centerX" id="sbk-aE-GPR"/>
+                            <constraint firstItem="yVU-Cr-pLJ" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="t0c-dv-25P"/>
+                            <constraint firstItem="3Kr-M4-Tfp" firstAttribute="trailing" secondItem="qPc-Xe-VAF" secondAttribute="trailing" id="whD-f1-hGC"/>
+                            <constraint firstItem="yVU-Cr-pLJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="39" id="zHE-S7-6nb"/>
+                            <constraint firstItem="lQ6-RK-cRm" firstAttribute="trailing" secondItem="yVU-Cr-pLJ" secondAttribute="trailing" id="zf5-lD-GO3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3Kr-M4-Tfp"/>
+                                <exclude reference="qPc-Xe-VAF"/>
+                                <exclude reference="SIv-Ki-WDU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="lLh-tq-sXO"/>
+                                <exclude reference="t0c-dv-25P"/>
+                                <exclude reference="zHE-S7-6nb"/>
+                                <exclude reference="8N3-VH-hog"/>
+                                <exclude reference="2dS-HC-D71"/>
+                                <exclude reference="KL5-fD-fpD"/>
+                                <exclude reference="doC-IO-osY"/>
+                                <exclude reference="whD-f1-hGC"/>
+                                <exclude reference="2fd-Hf-mKB"/>
+                                <exclude reference="ac4-L1-VuP"/>
+                                <exclude reference="697-bc-LWZ"/>
+                                <exclude reference="6dP-Dg-4RJ"/>
+                                <exclude reference="zf5-lD-GO3"/>
+                                <exclude reference="HU1-wx-BWB"/>
+                                <exclude reference="sbk-aE-GPR"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3Kr-M4-Tfp"/>
+                                <include reference="qPc-Xe-VAF"/>
+                                <include reference="SIv-Ki-WDU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="lLh-tq-sXO"/>
+                                <include reference="t0c-dv-25P"/>
+                                <include reference="zHE-S7-6nb"/>
+                                <include reference="8N3-VH-hog"/>
+                                <include reference="2dS-HC-D71"/>
+                                <include reference="KL5-fD-fpD"/>
+                                <include reference="doC-IO-osY"/>
+                                <include reference="whD-f1-hGC"/>
+                                <include reference="2fd-Hf-mKB"/>
+                                <include reference="ac4-L1-VuP"/>
+                                <include reference="697-bc-LWZ"/>
+                                <include reference="6dP-Dg-4RJ"/>
+                                <include reference="zf5-lD-GO3"/>
+                                <include reference="HU1-wx-BWB"/>
+                                <include reference="sbk-aE-GPR"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="nameSetting" destination="3Kr-M4-Tfp" id="eeA-PP-3Oa"/>
+                        <outlet property="resultsField" destination="yVU-Cr-pLJ" id="2le-tD-eUo"/>
+                        <outlet property="speciesSetting" destination="qPc-Xe-VAF" id="y81-xG-fKF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439.5" y="356"/>
+        </scene>
+    </scenes>
+</document>

@@ -409,6 +409,7 @@
 				78DDE0E11A6499E30035D239 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78DDE0E21A6499E30035D239 /* Build configuration list for PBXNativeTarget "IB Coding DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				78DDE0E41A6499E30035D239 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
