@@ -70,7 +70,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f8k-a6-5ul"/>
+                                    <action selector="buttonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="poD-aT-gNm"/>
                                 </connections>
                             </button>
                         </subviews>
