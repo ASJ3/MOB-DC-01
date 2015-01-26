@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -39,19 +41,20 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-bq-sus">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Read game rules">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="8IH-ar-xyl" kind="show" id="d9H-Pi-dWC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your hand's total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTr-dE-Jkd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your hand's total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTr-dE-Jkd">
                                 <rect key="frame" x="16" y="40" width="98" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2au-kp-DQO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2au-kp-DQO">
                                 <rect key="frame" x="524" y="40" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="1I0-xV-E8p"/>
@@ -74,30 +77,73 @@
                             </label>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VLj-XE-fcY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card Back" translatesAutoresizingMaskIntoConstraints="NO" id="Wwz-V2-O9L">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="184" id="DYP-JD-QA1"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="DYP-JD-QA1"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="DYP-JD-QA1"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="Wwz-V2-O9L" firstAttribute="width" secondItem="VLj-XE-fcY" secondAttribute="height" multiplier="67:100" id="Gke-JG-ZhR"/>
                                     <constraint firstAttribute="height" constant="200" id="PNn-Cy-sec"/>
                                     <constraint firstAttribute="width" constant="150" id="juN-Gc-8SO"/>
+                                    <constraint firstAttribute="centerX" secondItem="Wwz-V2-O9L" secondAttribute="centerX" id="o9t-qf-wKT"/>
+                                    <constraint firstAttribute="centerY" secondItem="Wwz-V2-O9L" secondAttribute="centerY" id="tcg-c2-iX4"/>
                                 </constraints>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Wwz-V2-O9L"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="PNn-Cy-sec"/>
                                         <exclude reference="juN-Gc-8SO"/>
+                                        <exclude reference="Gke-JG-ZhR"/>
+                                        <exclude reference="o9t-qf-wKT"/>
+                                        <exclude reference="tcg-c2-iX4"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Wwz-V2-O9L"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <include reference="PNn-Cy-sec"/>
                                         <include reference="juN-Gc-8SO"/>
+                                        <include reference="Gke-JG-ZhR"/>
+                                        <include reference="o9t-qf-wKT"/>
+                                        <include reference="tcg-c2-iX4"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Fz5-bg-m4P" appends="YES" id="phb-Kf-iHc"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKu-Cs-6Ug">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="  New Game  ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startNewGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="k5n-3s-ZHp"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.55686274509803924" green="0.77254901960784317" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="oBa-bq-sus" secondAttribute="bottom" constant="20" symbolic="YES" id="0YB-h7-35D"/>
                             <constraint firstItem="oBa-bq-sus" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="1UM-5V-hjp"/>
@@ -108,8 +154,12 @@
                             <constraint firstItem="oBa-bq-sus" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="R3g-7j-wMX"/>
                             <constraint firstItem="xBz-Tp-YFE" firstAttribute="leading" secondItem="oTr-dE-Jkd" secondAttribute="leading" id="Roi-0A-IoI"/>
                             <constraint firstItem="xBz-Tp-YFE" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="VwS-Gz-GDd"/>
+                            <constraint firstItem="VLj-XE-fcY" firstAttribute="centerX" secondItem="kKu-Cs-6Ug" secondAttribute="centerX" id="W2g-Y0-PDY">
+                                <variation key="widthClass=compact" constant="-1"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="VLj-XE-fcY" secondAttribute="centerX" id="Yx7-Q2-y2U"/>
                             <constraint firstItem="xBz-Tp-YFE" firstAttribute="trailing" secondItem="2au-kp-DQO" secondAttribute="trailing" id="ea3-Gq-UVK"/>
+                            <constraint firstItem="kKu-Cs-6Ug" firstAttribute="top" secondItem="VLj-XE-fcY" secondAttribute="bottom" constant="64" id="nEQ-rk-Lhr"/>
                             <constraint firstItem="VLj-XE-fcY" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="qaL-oa-p1l"/>
                             <constraint firstItem="oBa-bq-sus" firstAttribute="leading" secondItem="oTr-dE-Jkd" secondAttribute="leading" id="vjL-Ek-0LE"/>
                             <constraint firstItem="oBa-bq-sus" firstAttribute="trailing" secondItem="2au-kp-DQO" secondAttribute="trailing" id="yUb-kC-QCi"/>
@@ -119,6 +169,7 @@
                                 <exclude reference="xBz-Tp-YFE"/>
                                 <exclude reference="oBa-bq-sus"/>
                                 <exclude reference="VLj-XE-fcY"/>
+                                <exclude reference="kKu-Cs-6Ug"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Roi-0A-IoI"/>
@@ -126,8 +177,10 @@
                                 <exclude reference="ea3-Gq-UVK"/>
                                 <exclude reference="7MY-WY-dSv"/>
                                 <exclude reference="QyR-dr-GGc"/>
+                                <exclude reference="W2g-Y0-PDY"/>
                                 <exclude reference="Yx7-Q2-y2U"/>
                                 <exclude reference="qaL-oa-p1l"/>
+                                <exclude reference="nEQ-rk-Lhr"/>
                                 <exclude reference="0YB-h7-35D"/>
                                 <exclude reference="1UM-5V-hjp"/>
                                 <exclude reference="R3g-7j-wMX"/>
@@ -140,6 +193,7 @@
                                 <include reference="xBz-Tp-YFE"/>
                                 <include reference="oBa-bq-sus"/>
                                 <include reference="VLj-XE-fcY"/>
+                                <include reference="kKu-Cs-6Ug"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Roi-0A-IoI"/>
@@ -148,9 +202,11 @@
                                 <exclude reference="5WE-a5-vho"/>
                                 <include reference="7MY-WY-dSv"/>
                                 <include reference="QyR-dr-GGc"/>
+                                <include reference="W2g-Y0-PDY"/>
                                 <include reference="Yx7-Q2-y2U"/>
                                 <include reference="qaL-oa-p1l"/>
                                 <exclude reference="80l-ST-UEN"/>
+                                <include reference="nEQ-rk-Lhr"/>
                                 <include reference="0YB-h7-35D"/>
                                 <include reference="1UM-5V-hjp"/>
                                 <include reference="R3g-7j-wMX"/>
@@ -173,7 +229,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1357" y="237"/>
+            <point key="canvasLocation" x="1356" y="237"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="hp2-PF-vmj">
@@ -204,12 +260,12 @@
                                         <variation key="widthClass=compact" constant="493"/>
                                     </constraint>
                                 </constraints>
-                                <mutableString key="text">Blackjack is a comparing card game between a player and dealer. The object of the game is to beat the dealer, which can be done in a number of ways:
+                                <string key="text">Blackjack is a comparing card game between a player and dealer. The object of the game is to beat the dealer, which can be done in a number of ways:
  - Get 21 points on the player's first two cards (called a blackjack), without a dealer blackjack;
  - Reach a final score higher than the dealer without exceeding 21; or
  - Let the dealer draw additional cards until his or her hand exceeds 21.
 
-The player or players are dealt an initial two-card hand and add together the value of their cards. Face cards (kings, queens, and jacks) are counted as ten points. A player and the dealer can count his or her own ace as 1 point or 11 points. All other cards are counted as the numeric value shown on the card. After receiving their initial two cards, players have the option of getting a "hit", or taking an additional card. In a given round, the player or the dealer wins by having a score of 21 or by having the highest score that is less than 21. Scoring higher than 21 (called "busting" or "going bust") results in a loss. A player may win by having any final score equal to or less than 21 if the dealer busts.</mutableString>
+The player or players are dealt an initial two-card hand and add together the value of their cards. Face cards (kings, queens, and jacks) are counted as ten points. A player and the dealer can count his or her own ace as 1 point or 11 points. All other cards are counted as the numeric value shown on the card. After receiving their initial two cards, players have the option of getting a "hit", or taking an additional card. In a given round, the player or the dealer wins by having a score of 21 or by having the highest score that is less than 21. Scoring higher than 21 (called "busting" or "going bust") results in a loss. A player may win by having any final score equal to or less than 21 if the dealer busts.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
@@ -242,13 +298,13 @@ The player or players are dealt an initial two-card hand and add together the va
                                 <exclude reference="Hoo-SV-4tw"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Dfp-U2-CIv"/>
-                                <exclude reference="Ju6-0n-hmF"/>
-                                <exclude reference="LFC-dm-5PK"/>
+                                <exclude reference="qQK-yQ-4AG"/>
                                 <exclude reference="QqS-fO-gu8"/>
                                 <exclude reference="f0g-XZ-1Kb"/>
                                 <exclude reference="oAI-wb-Cq8"/>
-                                <exclude reference="qQK-yQ-4AG"/>
+                                <exclude reference="Dfp-U2-CIv"/>
+                                <exclude reference="Ju6-0n-hmF"/>
+                                <exclude reference="LFC-dm-5PK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -257,13 +313,13 @@ The player or players are dealt an initial two-card hand and add together the va
                                 <include reference="Hoo-SV-4tw"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Dfp-U2-CIv"/>
-                                <include reference="Ju6-0n-hmF"/>
-                                <include reference="LFC-dm-5PK"/>
+                                <include reference="qQK-yQ-4AG"/>
                                 <include reference="QqS-fO-gu8"/>
                                 <include reference="f0g-XZ-1Kb"/>
                                 <include reference="oAI-wb-Cq8"/>
-                                <include reference="qQK-yQ-4AG"/>
+                                <include reference="Dfp-U2-CIv"/>
+                                <include reference="Ju6-0n-hmF"/>
+                                <include reference="LFC-dm-5PK"/>
                             </mask>
                         </variation>
                     </view>
@@ -276,4 +332,7 @@ The player or players are dealt an initial two-card hand and add together the va
             <point key="canvasLocation" x="2107.5" y="237"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Card Back" width="240" height="356"/>
+    </resources>
 </document>

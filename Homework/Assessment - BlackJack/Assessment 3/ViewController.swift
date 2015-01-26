@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         if computer.busting == false && player.busting == false {
             
             UIView.animateWithDuration(1, animations: {
-                self.redBox.backgroundColor = UIColor(red: 130.0 / 255.0, green: 200.0 / 255.0, blue: 50.0 / 255.0, alpha: 1.0)
-                self.redBox.backgroundColor = UIColor(red: 8.0 / 255.0, green: 128.0 / 255.0, blue: 0.0, alpha: 1.0)
+                self.redBox.backgroundColor = UIColor(red: 254.0 / 255.0, green: 119.0 / 255.0, blue: 136 / 255.0, alpha: 1.0)
+                self.redBox.backgroundColor = UIColor.whiteColor()
             })
             // Update the player's hand by adding the score of one card (between 1 and 11)
             player.cardHand = newGame.deal(player.cardHand)
@@ -64,11 +64,35 @@ class ViewController: UIViewController {
                 
             }
             
-//            UIView.animateWithDuration(2.5, animations: {
-//                self.redBox.backgroundColor = UIColor(red: 8.0 / 255.0, green: 128.0 / 255.0, blue: 0.0, alpha: 1.0)
-//            })
         }
         
+    }
+    
+    @IBAction func startNewGame(sender: AnyObject) {
+        titleAndResults.text = ""
+        
+        // Get new scores for the first hand
+        var newFirstHand = newGame.firstHand()
+        
+        // Assigns the first-hand new scores to the player and computer
+        player.cardHand = newFirstHand.playerHand
+        computer.cardHand = newFirstHand.cpuHand
+        
+        player.busting = false
+        computer.busting = false
+        
+        println("\n*****\nnew game starting scores are: \(newFirstHand)")
+        println("Player score is: \(player.cardHand) and computer score is: \(computer.cardHand)")
+        
+        playerScoreField.text = String(player.cardHand)
+        
+        // if the player gets 21 points on her first two cards (called a blackjack)
+        // AND if the dealer doesn't have a blackjack, then the player wins and the game is over
+        if player.cardHand == 21 && computer.cardHand < 21 {
+            titleAndResults.font = UIFont (name: "System", size: 14)
+            titleAndResults.text = "Player's hand is a blackjack!"
+            computer.busting = true
+        }
     }
     
     @IBOutlet weak var redBox: UIView!
