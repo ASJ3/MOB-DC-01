@@ -22,13 +22,59 @@ class ViewController: UIViewController {
     // Bonus: Create a button to play a new game.
     // Bonus 2: Player can start with a pool of money (selected through a text field) and make bets for each game (through a text field again). If player reaches <= 0, don't allow them to play any more games.
     // Bonus 3: When handing out cards, display the actual value to the user. If the card is an Ace, let the user select either 1 or 11.
+    var player = Player()
+    var computer = Player()
+    var newGame = CardGame(player: Player(), cpu: Player())
+    
+    
     
     @IBOutlet weak var playerScoreField: UILabel!
+    @IBAction func dealNewCard(sender: UITapGestureRecognizer) {
+        
+        // verify that both the player's and the computer's hands do not total more than 21
+        while computer.busting == false && player.busting == false {
+            // Update the player's hand by adding the score of one card (between 1 and 11)
+            player.cardHand = newGame.deal(player.cardHand)
+            playerScoreField.text = String(player.cardHand)
+            
+            // if the player's hand totals more than 21, they lost
+            if player.cardHand > 21 {
+                println("player's hand total \(player.cardHand), which is > 21, so they lost")
+                player.busting = true
+                break
+            }
+            
+            // Each round, the 'dealer' (i.e. computer here) has to draw an additional card until its score is >= 17
+            if computer.cardHand < 17 {
+                computer.cardHand = newGame.deal(computer.cardHand)
+                println("Computer score is now: \(computer.cardHand)")
+            } else {
+                println("Computer score is \(computer.cardHand), which is >= 17 so they don't draw any more card")
+            }
+            
+            if computer.cardHand > 21 {
+                println("player's hand total \(player.cardHand), which is > 21, so they lost")
+                computer.busting = true
+                break
+            }
+            
+        }
+        
+    }
     
     @IBOutlet weak var redBox: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Make the corner of the green card rounded
         redBox.layer.cornerRadius = 5
+        
+        // Initialize the newGame object with the 'player' and 'cpu' instances of the Player class
+        newGame = CardGame(player: player, cpu: computer)
+        
+        println("Player score is: \(player.cardHand) and computer score is: \(computer.cardHand)")
+        
+        playerScoreField.text = String(player.cardHand)
 
     }
 
