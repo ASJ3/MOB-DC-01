@@ -28,20 +28,22 @@ class ViewController: UIViewController {
     
     
     
+    @IBOutlet weak var titleAndResults: UILabel!
     @IBOutlet weak var playerScoreField: UILabel!
     @IBAction func dealNewCard(sender: UITapGestureRecognizer) {
         
         // verify that both the player's and the computer's hands do not total more than 21
-        while computer.busting == false && player.busting == false {
+        if computer.busting == false && player.busting == false {
             // Update the player's hand by adding the score of one card (between 1 and 11)
             player.cardHand = newGame.deal(player.cardHand)
             playerScoreField.text = String(player.cardHand)
             
             // if the player's hand totals more than 21, they lost
             if player.cardHand > 21 {
-                println("player's hand total \(player.cardHand), which is > 21, so they lost")
+                titleAndResults.font = UIFont (name: "System", size: 14)
+                titleAndResults.text = "Player's hand is \(player.cardHand) (>21) so they lost"
                 player.busting = true
-                break
+                
             }
             
             // Each round, the 'dealer' (i.e. computer here) has to draw an additional card until its score is >= 17
@@ -53,9 +55,10 @@ class ViewController: UIViewController {
             }
             
             if computer.cardHand > 21 {
-                println("player's hand total \(player.cardHand), which is > 21, so they lost")
+                titleAndResults.font = UIFont (name: "System", size: 14)
+                titleAndResults.text = "Dealer's hand is \(player.cardHand) (>21) so they lost"
                 computer.busting = true
-                break
+                
             }
             
         }
@@ -75,6 +78,15 @@ class ViewController: UIViewController {
         println("Player score is: \(player.cardHand) and computer score is: \(computer.cardHand)")
         
         playerScoreField.text = String(player.cardHand)
+        
+        // if the player gets 21 points on her first two cards (called a blackjack)
+        // AND if the dealer doesn't have a blackjack, then the player wins and the game is over
+        if player.cardHand == 21 && computer.cardHand < 21 {
+            titleAndResults.font = UIFont (name: "System", size: 14)
+            titleAndResults.text = "Player's hand is a blackjack!"
+            computer.busting = true
+            
+        }
 
     }
 

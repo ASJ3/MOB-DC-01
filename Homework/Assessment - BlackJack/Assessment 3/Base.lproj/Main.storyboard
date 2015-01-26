@@ -19,9 +19,22 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackJack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-Tp-YFE">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="XzG-R7-tTf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XzG-R7-tTf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="XzG-R7-tTf"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-bq-sus">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -32,7 +45,7 @@
                                     <segue destination="8IH-ar-xyl" kind="show" id="d9H-Pi-dWC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTr-dE-Jkd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your hand's total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTr-dE-Jkd">
                                 <rect key="frame" x="16" y="40" width="98" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -150,6 +163,7 @@
                     <connections>
                         <outlet property="playerScoreField" destination="2au-kp-DQO" id="jeo-EU-9hC"/>
                         <outlet property="redBox" destination="VLj-XE-fcY" id="Vv1-Uh-GQ7"/>
+                        <outlet property="titleAndResults" destination="xBz-Tp-YFE" id="j3V-Kh-n5L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -178,34 +192,80 @@
                                 <state key="normal" title="Back to game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="16" y="536" width="368" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="dismissRules:" destination="8IH-ar-xyl" eventType="touchUpInside" id="2Lu-Fz-XtF"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="BlackJack rules to be displayed to users." translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-SV-4tw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-SV-4tw">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="465" id="BDg-fg-kuE">
+                                        <variation key="widthClass=compact" constant="493"/>
+                                    </constraint>
+                                </constraints>
+                                <mutableString key="text">Blackjack is a comparing card game between a player and dealer. The object of the game is to beat the dealer, which can be done in a number of ways:
+ - Get 21 points on the player's first two cards (called a blackjack), without a dealer blackjack;
+ - Reach a final score higher than the dealer without exceeding 21; or
+ - Let the dealer draw additional cards until his or her hand exceeds 21.
+
+The player or players are dealt an initial two-card hand and add together the value of their cards. Face cards (kings, queens, and jacks) are counted as ten points. A player and the dealer can count his or her own ace as 1 point or 11 points. All other cards are counted as the numeric value shown on the card. After receiving their initial two cards, players have the option of getting a "hit", or taking an additional card. In a given round, the player or the dealer wins by having a score of 21 or by having the highest score that is less than 21. Scoring higher than 21 (called "busting" or "going bust") results in a loss. A player may win by having any final score equal to or less than 21 if the dealer busts.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="28" width="368" height="446"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BDg-fg-kuE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="BDg-fg-kuE"/>
+                                    </mask>
                                 </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i50-Gf-Qm0" firstAttribute="top" secondItem="Hoo-SV-4tw" secondAttribute="bottom" constant="43" id="8PY-j9-FW4">
+                                <variation key="widthClass=compact" constant="15"/>
+                            </constraint>
+                            <constraint firstItem="Hoo-SV-4tw" firstAttribute="leading" secondItem="n9u-H3-IMP" secondAttribute="leadingMargin" id="Dfp-U2-CIv"/>
+                            <constraint firstAttribute="centerY" secondItem="Hoo-SV-4tw" secondAttribute="centerY" constant="39.5" id="Ju6-0n-hmF">
+                                <variation key="widthClass=compact" constant="25.5"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="Hoo-SV-4tw" secondAttribute="centerX" id="LFC-dm-5PK"/>
+                            <constraint firstItem="Az3-DV-G9B" firstAttribute="top" secondItem="i50-Gf-Qm0" secondAttribute="bottom" constant="34" id="awW-BL-Kig"/>
+                            <constraint firstAttribute="centerX" secondItem="i50-Gf-Qm0" secondAttribute="centerX" id="s2F-33-liS"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="i50-Gf-Qm0"/>
                                 <exclude reference="Hoo-SV-4tw"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Dfp-U2-CIv"/>
+                                <exclude reference="Ju6-0n-hmF"/>
+                                <exclude reference="LFC-dm-5PK"/>
+                                <exclude reference="8PY-j9-FW4"/>
+                                <exclude reference="s2F-33-liS"/>
+                                <exclude reference="awW-BL-Kig"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="i50-Gf-Qm0"/>
                                 <include reference="Hoo-SV-4tw"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Dfp-U2-CIv"/>
+                                <include reference="Ju6-0n-hmF"/>
+                                <include reference="LFC-dm-5PK"/>
+                                <include reference="8PY-j9-FW4"/>
+                                <include reference="s2F-33-liS"/>
+                                <include reference="awW-BL-Kig"/>
                             </mask>
                         </variation>
                     </view>
