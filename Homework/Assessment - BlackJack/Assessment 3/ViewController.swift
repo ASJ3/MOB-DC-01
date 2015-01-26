@@ -26,14 +26,17 @@ class ViewController: UIViewController {
     var computer = Player()
     var newGame = CardGame(player: Player(), cpu: Player())
     
-    
-    
     @IBOutlet weak var titleAndResults: UILabel!
     @IBOutlet weak var playerScoreField: UILabel!
     @IBAction func dealNewCard(sender: UITapGestureRecognizer) {
         
         // verify that both the player's and the computer's hands do not total more than 21
         if computer.busting == false && player.busting == false {
+            
+            UIView.animateWithDuration(1, animations: {
+                self.redBox.backgroundColor = UIColor(red: 130.0 / 255.0, green: 200.0 / 255.0, blue: 50.0 / 255.0, alpha: 1.0)
+                self.redBox.backgroundColor = UIColor(red: 8.0 / 255.0, green: 128.0 / 255.0, blue: 0.0, alpha: 1.0)
+            })
             // Update the player's hand by adding the score of one card (between 1 and 11)
             player.cardHand = newGame.deal(player.cardHand)
             playerScoreField.text = String(player.cardHand)
@@ -56,11 +59,14 @@ class ViewController: UIViewController {
             
             if computer.cardHand > 21 {
                 titleAndResults.font = UIFont (name: "System", size: 14)
-                titleAndResults.text = "Dealer's hand is \(player.cardHand) (>21) so they lost"
+                titleAndResults.text = "Dealer's hand is \(computer.cardHand) (>21) so they lost"
                 computer.busting = true
                 
             }
             
+//            UIView.animateWithDuration(2.5, animations: {
+//                self.redBox.backgroundColor = UIColor(red: 8.0 / 255.0, green: 128.0 / 255.0, blue: 0.0, alpha: 1.0)
+//            })
         }
         
     }

@@ -74,7 +74,7 @@
                             </label>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VLj-XE-fcY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="PNn-Cy-sec"/>
@@ -192,9 +192,6 @@
                                 <state key="normal" title="Back to game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="536" width="368" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="dismissRules:" destination="8IH-ar-xyl" eventType="touchUpInside" id="2Lu-Fz-XtF"/>
                                 </connections>
@@ -229,16 +226,15 @@ The player or players are dealt an initial two-card hand and add together the va
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i50-Gf-Qm0" firstAttribute="top" secondItem="Hoo-SV-4tw" secondAttribute="bottom" constant="43" id="8PY-j9-FW4">
-                                <variation key="widthClass=compact" constant="15"/>
-                            </constraint>
                             <constraint firstItem="Hoo-SV-4tw" firstAttribute="leading" secondItem="n9u-H3-IMP" secondAttribute="leadingMargin" id="Dfp-U2-CIv"/>
                             <constraint firstAttribute="centerY" secondItem="Hoo-SV-4tw" secondAttribute="centerY" constant="39.5" id="Ju6-0n-hmF">
                                 <variation key="widthClass=compact" constant="25.5"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="Hoo-SV-4tw" secondAttribute="centerX" id="LFC-dm-5PK"/>
-                            <constraint firstItem="Az3-DV-G9B" firstAttribute="top" secondItem="i50-Gf-Qm0" secondAttribute="bottom" constant="34" id="awW-BL-Kig"/>
-                            <constraint firstAttribute="centerX" secondItem="i50-Gf-Qm0" secondAttribute="centerX" id="s2F-33-liS"/>
+                            <constraint firstItem="i50-Gf-Qm0" firstAttribute="trailing" secondItem="Hoo-SV-4tw" secondAttribute="trailing" id="QqS-fO-gu8"/>
+                            <constraint firstItem="i50-Gf-Qm0" firstAttribute="top" secondItem="Hoo-SV-4tw" secondAttribute="bottom" constant="15" id="f0g-XZ-1Kb"/>
+                            <constraint firstItem="i50-Gf-Qm0" firstAttribute="leading" secondItem="Hoo-SV-4tw" secondAttribute="leading" id="oAI-wb-Cq8"/>
+                            <constraint firstItem="Az3-DV-G9B" firstAttribute="top" secondItem="i50-Gf-Qm0" secondAttribute="bottom" constant="34" id="qQK-yQ-4AG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -249,9 +245,10 @@ The player or players are dealt an initial two-card hand and add together the va
                                 <exclude reference="Dfp-U2-CIv"/>
                                 <exclude reference="Ju6-0n-hmF"/>
                                 <exclude reference="LFC-dm-5PK"/>
-                                <exclude reference="8PY-j9-FW4"/>
-                                <exclude reference="s2F-33-liS"/>
-                                <exclude reference="awW-BL-Kig"/>
+                                <exclude reference="QqS-fO-gu8"/>
+                                <exclude reference="f0g-XZ-1Kb"/>
+                                <exclude reference="oAI-wb-Cq8"/>
+                                <exclude reference="qQK-yQ-4AG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -263,9 +260,10 @@ The player or players are dealt an initial two-card hand and add together the va
                                 <include reference="Dfp-U2-CIv"/>
                                 <include reference="Ju6-0n-hmF"/>
                                 <include reference="LFC-dm-5PK"/>
-                                <include reference="8PY-j9-FW4"/>
-                                <include reference="s2F-33-liS"/>
-                                <include reference="awW-BL-Kig"/>
+                                <include reference="QqS-fO-gu8"/>
+                                <include reference="f0g-XZ-1Kb"/>
+                                <include reference="oAI-wb-Cq8"/>
+                                <include reference="qQK-yQ-4AG"/>
                             </mask>
                         </variation>
                     </view>
