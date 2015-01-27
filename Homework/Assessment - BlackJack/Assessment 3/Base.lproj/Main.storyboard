@@ -80,6 +80,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card Back" translatesAutoresizingMaskIntoConstraints="NO" id="Wwz-V2-O9L">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="184" id="DYP-JD-QA1"/>
                                         </constraints>
@@ -93,6 +94,9 @@
                                                 <include reference="DYP-JD-QA1"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wRp-R7-VyJ" appends="YES" id="qod-Ix-unP"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,17 +179,17 @@
                                 <exclude reference="Roi-0A-IoI"/>
                                 <exclude reference="VwS-Gz-GDd"/>
                                 <exclude reference="ea3-Gq-UVK"/>
-                                <exclude reference="7MY-WY-dSv"/>
-                                <exclude reference="QyR-dr-GGc"/>
-                                <exclude reference="W2g-Y0-PDY"/>
-                                <exclude reference="Yx7-Q2-y2U"/>
-                                <exclude reference="qaL-oa-p1l"/>
                                 <exclude reference="nEQ-rk-Lhr"/>
                                 <exclude reference="0YB-h7-35D"/>
                                 <exclude reference="1UM-5V-hjp"/>
                                 <exclude reference="R3g-7j-wMX"/>
                                 <exclude reference="vjL-Ek-0LE"/>
                                 <exclude reference="yUb-kC-QCi"/>
+                                <exclude reference="7MY-WY-dSv"/>
+                                <exclude reference="QyR-dr-GGc"/>
+                                <exclude reference="W2g-Y0-PDY"/>
+                                <exclude reference="Yx7-Q2-y2U"/>
+                                <exclude reference="qaL-oa-p1l"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -199,6 +203,12 @@
                                 <include reference="Roi-0A-IoI"/>
                                 <include reference="VwS-Gz-GDd"/>
                                 <include reference="ea3-Gq-UVK"/>
+                                <include reference="nEQ-rk-Lhr"/>
+                                <include reference="0YB-h7-35D"/>
+                                <include reference="1UM-5V-hjp"/>
+                                <include reference="R3g-7j-wMX"/>
+                                <include reference="vjL-Ek-0LE"/>
+                                <include reference="yUb-kC-QCi"/>
                                 <exclude reference="5WE-a5-vho"/>
                                 <include reference="7MY-WY-dSv"/>
                                 <include reference="QyR-dr-GGc"/>
@@ -206,12 +216,6 @@
                                 <include reference="Yx7-Q2-y2U"/>
                                 <include reference="qaL-oa-p1l"/>
                                 <exclude reference="80l-ST-UEN"/>
-                                <include reference="nEQ-rk-Lhr"/>
-                                <include reference="0YB-h7-35D"/>
-                                <include reference="1UM-5V-hjp"/>
-                                <include reference="R3g-7j-wMX"/>
-                                <include reference="vjL-Ek-0LE"/>
-                                <include reference="yUb-kC-QCi"/>
                             </mask>
                         </variation>
                     </view>
@@ -228,6 +232,7 @@
                         <action selector="dealNewCard:" destination="vXZ-lx-hvc" id="Z8v-cl-7Wu"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="wRp-R7-VyJ"/>
             </objects>
             <point key="canvasLocation" x="1356" y="237"/>
         </scene>
