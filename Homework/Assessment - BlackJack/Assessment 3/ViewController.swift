@@ -9,6 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+ var startBlink = false
+    
+    func blink() {
+        if startBlink == true {
+            if self.newGameButton.backgroundColor ==  UIColor.whiteColor() {
+                UIView.animateWithDuration(0.5, animations: {
+                                    self.newGameButton.backgroundColor = UIColor(red: 188.0 / 255.0, green: 255.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
+                                })
+            } else {
+                UIView.animateWithDuration(0.5, animations: {
+                    self.newGameButton.backgroundColor = UIColor.whiteColor()
+                    
+                })
+            }
+        }
+        
+    }
+    
     // BlackJack game: Create a a game of Blackjack
     // ************* Baseline requirements:
     // ** Set up Player class and CardGame class in their respective provided files. Follow the protocol rules for the CardGame class.
@@ -28,15 +46,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var titleAndResults: UILabel!
     @IBOutlet weak var playerScoreField: UILabel!
+    @IBOutlet weak var newGameButton: UIButton!
+    
     @IBAction func dealNewCard(sender: UITapGestureRecognizer) {
         
         // verify that both the player's and the computer's hands do not total more than 21
         if computer.busting == false && player.busting == false {
-            
-            UIView.animateWithDuration(1, animations: {
-                self.redBox.backgroundColor = UIColor(red: 254.0 / 255.0, green: 119.0 / 255.0, blue: 136 / 255.0, alpha: 1.0)
+            self.redBox.backgroundColor = UIColor(red: 254.0 / 255.0, green: 119.0 / 255.0, blue: 136 / 255.0, alpha: 1.0)
+            UIView.animateWithDuration(0.6, animations: {
                 self.redBox.backgroundColor = UIColor.whiteColor()
             })
+            
+
             // Update the player's hand by adding the score of one card (between 1 and 11)
             player.cardHand = newGame.deal(player.cardHand)
             playerScoreField.text = String(player.cardHand)
@@ -46,6 +67,7 @@ class ViewController: UIViewController {
                 titleAndResults.font = UIFont (name: "System", size: 14)
                 titleAndResults.text = "Player's hand is \(player.cardHand) (>21) so they lost"
                 player.busting = true
+                startBlink = true
                 
             }
             
@@ -61,6 +83,7 @@ class ViewController: UIViewController {
                 titleAndResults.font = UIFont (name: "System", size: 14)
                 titleAndResults.text = "Dealer's hand is \(computer.cardHand) (>21) so they lost"
                 computer.busting = true
+                startBlink = true
                 
             }
             
@@ -69,6 +92,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startNewGame(sender: AnyObject) {
+        newGameButton.backgroundColor = UIColor.whiteColor()
+        startBlink = false
         titleAndResults.text = ""
         
         // Get new scores for the first hand
@@ -92,6 +117,7 @@ class ViewController: UIViewController {
             titleAndResults.font = UIFont (name: "System", size: 14)
             titleAndResults.text = "Player's hand is a blackjack!"
             computer.busting = true
+            startBlink = true
         }
     }
     
@@ -101,6 +127,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Make the corner of the green card rounded
         redBox.layer.cornerRadius = 5
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "blink", userInfo: nil, repeats: true)
         
         // Initialize the newGame object with the 'player' and 'cpu' instances of the Player class
         newGame = CardGame(player: player, cpu: computer)
