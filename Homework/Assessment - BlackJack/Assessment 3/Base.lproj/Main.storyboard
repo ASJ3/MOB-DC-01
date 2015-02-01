@@ -199,10 +199,6 @@
                                 <exclude reference="Roi-0A-IoI"/>
                                 <exclude reference="VwS-Gz-GDd"/>
                                 <exclude reference="ea3-Gq-UVK"/>
-                                <exclude reference="7MY-WY-dSv"/>
-                                <exclude reference="QyR-dr-GGc"/>
-                                <exclude reference="Yx7-Q2-y2U"/>
-                                <exclude reference="qaL-oa-p1l"/>
                                 <exclude reference="GKm-AS-74J"/>
                                 <exclude reference="SVf-K2-v34"/>
                                 <exclude reference="0YB-h7-35D"/>
@@ -210,6 +206,10 @@
                                 <exclude reference="R3g-7j-wMX"/>
                                 <exclude reference="vjL-Ek-0LE"/>
                                 <exclude reference="yUb-kC-QCi"/>
+                                <exclude reference="7MY-WY-dSv"/>
+                                <exclude reference="QyR-dr-GGc"/>
+                                <exclude reference="Yx7-Q2-y2U"/>
+                                <exclude reference="qaL-oa-p1l"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -223,12 +223,6 @@
                                 <include reference="Roi-0A-IoI"/>
                                 <include reference="VwS-Gz-GDd"/>
                                 <include reference="ea3-Gq-UVK"/>
-                                <exclude reference="5WE-a5-vho"/>
-                                <include reference="7MY-WY-dSv"/>
-                                <include reference="QyR-dr-GGc"/>
-                                <include reference="Yx7-Q2-y2U"/>
-                                <include reference="qaL-oa-p1l"/>
-                                <exclude reference="80l-ST-UEN"/>
                                 <include reference="GKm-AS-74J"/>
                                 <include reference="SVf-K2-v34"/>
                                 <include reference="0YB-h7-35D"/>
@@ -236,6 +230,12 @@
                                 <include reference="R3g-7j-wMX"/>
                                 <include reference="vjL-Ek-0LE"/>
                                 <include reference="yUb-kC-QCi"/>
+                                <exclude reference="5WE-a5-vho"/>
+                                <include reference="7MY-WY-dSv"/>
+                                <include reference="QyR-dr-GGc"/>
+                                <include reference="Yx7-Q2-y2U"/>
+                                <include reference="qaL-oa-p1l"/>
+                                <exclude reference="80l-ST-UEN"/>
                             </mask>
                         </variation>
                     </view>
