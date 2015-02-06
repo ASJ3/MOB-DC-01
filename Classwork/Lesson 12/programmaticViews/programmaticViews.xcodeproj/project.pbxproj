@@ -13,6 +13,7 @@
 		7827256D1A82EF7000D2327A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7827256C1A82EF7000D2327A /* Images.xcassets */; };
 		782725701A82EF7000D2327A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7827256E1A82EF7000D2327A /* LaunchScreen.xib */; };
 		7827257C1A82EF7000D2327A /* programmaticViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827257B1A82EF7000D2327A /* programmaticViewsTests.swift */; };
+		782725861A82FAE900D2327A /* Slytherin_Shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 782725851A82FAE900D2327A /* Slytherin_Shield.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		782725751A82EF7000D2327A /* programmaticViewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = programmaticViewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7827257A1A82EF7000D2327A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7827257B1A82EF7000D2327A /* programmaticViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = programmaticViewsTests.swift; sourceTree = "<group>"; };
+		782725851A82FAE900D2327A /* Slytherin_Shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slytherin_Shield.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		782725621A82EF7000D2327A /* programmaticViews */ = {
 			isa = PBXGroup;
 			children = (
+				782725851A82FAE900D2327A /* Slytherin_Shield.png */,
 				782725651A82EF7000D2327A /* AppDelegate.swift */,
 				782725671A82EF7000D2327A /* ViewController.swift */,
 				782725691A82EF7000D2327A /* Main.storyboard */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7827256B1A82EF7000D2327A /* Main.storyboard in Resources */,
+				782725861A82FAE900D2327A /* Slytherin_Shield.png in Resources */,
 				782725701A82EF7000D2327A /* LaunchScreen.xib in Resources */,
 				7827256D1A82EF7000D2327A /* Images.xcassets in Resources */,
 			);
