@@ -65,6 +65,7 @@ class ViewController: UIViewController, UITextViewDelegate {
             var documentPath = path[0].relativePath! as String
             println("doc path is \(documentPath)")
             let mySavedPath = documentPath + "/savedFile.txt"
+            println("***my Saved Path is \(mySavedPath)")
             
             // Access our file from the path we defined above
             var stringToLoad: NSString? = NSString(contentsOfFile: mySavedPath, encoding: NSUTF32StringEncoding, error: nil)
