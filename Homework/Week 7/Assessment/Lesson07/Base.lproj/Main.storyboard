@@ -137,31 +137,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5S-6K-4Ig">
-                                <rect key="frame" x="277" y="127" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="randomButton:" destination="lWA-Qe-LpN" eventType="touchUpInside" id="SuZ-ie-kj9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zba-PB-Qsj" firstAttribute="trailing" secondItem="VXK-EB-7Kt" secondAttribute="trailingMargin" id="Phv-Ls-lAQ"/>
-                            <constraint firstAttribute="centerX" secondItem="n5S-6K-4Ig" secondAttribute="centerX" id="WGP-3M-7Hy"/>
                             <constraint firstItem="zba-PB-Qsj" firstAttribute="top" secondItem="VXK-EB-7Kt" secondAttribute="topMargin" id="jDh-5e-MJk"/>
                             <constraint firstItem="rnR-sF-Djc" firstAttribute="top" secondItem="zba-PB-Qsj" secondAttribute="bottom" id="jJm-Xn-MZ0"/>
                             <constraint firstItem="zba-PB-Qsj" firstAttribute="leading" secondItem="VXK-EB-7Kt" secondAttribute="leadingMargin" id="jul-sE-bbV"/>
-                            <constraint firstItem="zba-PB-Qsj" firstAttribute="top" secondItem="n5S-6K-4Ig" secondAttribute="bottom" constant="-157" id="s8e-y8-6QK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W4c-fq-GLh">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="BAS-oR-Hjw">
                             <connections>
-                                <action selector="saveAction:" destination="lWA-Qe-LpN" id="PWt-YD-cWZ"/>
-                                <segue destination="03b-O5-o7r" kind="show" id="oNc-T8-vY0"/>
+                                <segue destination="03b-O5-o7r" kind="show" id="xMj-sO-rb9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
