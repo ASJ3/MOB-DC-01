@@ -18,7 +18,10 @@ class FirstViewController: UIViewController {
         var test_number = defaults.objectForKey("test_number") as Int
         var test_string = defaults.objectForKey("test_string") as String
         
-        self.textView.text = "NSUserDefaults:\n\ntest string is: \(test_string)\ntest number is: \(test_number)"
+        var test_slider = defaults.objectForKey("settings_slider") as Float
+        var settings_name = defaults.objectForKey("settings_name") as String
+        
+        self.textView.text = "NSUserDefaults:\n\ntest string is: \(test_string)\ntest number is: \(test_number)\nslider settings is: \(test_slider)\nSettings name is: \(settings_name)"
               
 //        NSUserDefaults.standardUserDefaults().synchronize()
 //        println(NSUserDefaults.standardUserDefaults().dictionaryRepresentation());
