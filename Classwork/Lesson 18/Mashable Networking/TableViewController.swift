@@ -21,19 +21,16 @@ class TableViewController: UITableViewController {
             let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
                 if let jsonDict: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) {
                     self.json = jsonDict as? NSDictionary
-                    println("assigning a dictionary to self.json:/n")
+                    println("assigning a dictionary to self.json\n")
 //                    println(self.json)
                 }
-                
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     // IMPORTANT we need to reload the data we got into our table view
                     self.tableView.reloadData()
                 })
             })
             task.resume()
-            
         }
-        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -45,11 +42,9 @@ class TableViewController: UITableViewController {
             if let articles = jsonData["new"] as? NSArray {
                 println("the number of articles from json is: \(articles.count)")
                 return articles.count
-                
             }
-            
         }
-        
+        // If jsonData is not created then we will return 0
         return 0
     }
     
@@ -58,7 +53,6 @@ class TableViewController: UITableViewController {
         if cell == nil  {
             cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
         }
-        
         if let jsonData = self.json {
             if let articles = jsonData["new"] as? NSArray {
                 if let article = articles[indexPath.row] as? NSDictionary {
@@ -66,11 +60,48 @@ class TableViewController: UITableViewController {
                     cell.textLabel?.text = articleTitle
                 }
             }
-            
         }
         return cell
     }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let jsonDict = self.json {
+            if let articles = jsonDict["new"] as? NSArray {
+                if let article = articles[indexPath.row] as? NSDictionary {
+                    if let link = article["link"] as? NSString {
+                        var url = NSURL(string: link)
+                        performSegueWithIdentifier("articleLink", sender: NSURLRequest(URL: url!))
+                    }
+                }
+            }
+            
+            //            if let data = jsonDict["data"] as? NSDictionary {
+            //                if let children = data["children"] as? NSArray {
+            //                    if let child = children[indexPath.row] as? NSDictionary {
+            //                        if let childData = child["data"] as? NSDictionary {
+            //                            if let permalink = childData["permalink"] as? NSString {
+            //                                var url = NSURL(string: "http://reddit.com" + permalink)
+            //                                performSegueWithIdentifier("web", sender: NSURLRequest(URL: url!))
+            //                            }
+            //
+            //                            }
+            //                        }
+            //                    }
+            //                }
+//            var permalink = jsonDict["data"]["children"][indexPath.row]["data"]["permalink"].string
+//            var url = NSURL(string: "http://reddit.com" + permalink!)
+//            performSegueWithIdentifier("web", sender: NSURLRequest(URL: url!))
+        }
+    }
 
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let request = sender as? NSURLRequest {
+            var destinationController = segue.destinationViewController as WebViewController
+            destinationController.request = request
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,19 +110,6 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-
-
-
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -125,16 +143,6 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
     }
     */
 

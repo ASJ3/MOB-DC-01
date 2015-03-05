@@ -13,6 +13,7 @@
 		788484D41AA7E43400DD7409 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788484D21AA7E43400DD7409 /* LaunchScreen.xib */; };
 		788484E01AA7E43400DD7409 /* Mashable_NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788484DF1AA7E43400DD7409 /* Mashable_NetworkingTests.swift */; };
 		788484EA1AA7EA4E00DD7409 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788484E91AA7EA4E00DD7409 /* TableViewController.swift */; };
+		78914CDD1AA89F3E00A34E0F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78914CDC1AA89F3E00A34E0F /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		788484DE1AA7E43400DD7409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		788484DF1AA7E43400DD7409 /* Mashable_NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mashable_NetworkingTests.swift; sourceTree = "<group>"; };
 		788484E91AA7EA4E00DD7409 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
+		78914CDC1AA89F3E00A34E0F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				788484E91AA7EA4E00DD7409 /* TableViewController.swift */,
+				78914CDC1AA89F3E00A34E0F /* WebViewController.swift */,
 				788484C91AA7E43400DD7409 /* AppDelegate.swift */,
 				788484CD1AA7E43400DD7409 /* Main.storyboard */,
 				788484D01AA7E43400DD7409 /* Images.xcassets */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				788484CA1AA7E43400DD7409 /* AppDelegate.swift in Sources */,
+				78914CDD1AA89F3E00A34E0F /* WebViewController.swift in Sources */,
 				788484EA1AA7EA4E00DD7409 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

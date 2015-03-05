@@ -20,7 +20,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Rm8-GL-ces" kind="show" id="dgX-4O-o6o"/>
+                                    <segue destination="Rm8-GL-ces" kind="show" identifier="articleLink" id="dgX-4O-o6o"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="1838" y="371"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="JAy-QK-3Pp">
             <objects>
-                <viewController id="Rm8-GL-ces" sceneMemberID="viewController">
+                <viewController id="Rm8-GL-ces" customClass="WebViewController" customModule="Mashable_Networking" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AgV-Mr-IEx"/>
                         <viewControllerLayoutGuide type="bottom" id="W1s-Ik-JOv"/>
@@ -48,25 +48,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4L-pE-ITe">
-                                <rect key="frame" x="26" y="64" width="548" height="516"/>
+                                <rect key="frame" x="11" y="64" width="578" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="C4L-pE-ITe" firstAttribute="leading" secondItem="ghO-bx-AeC" secondAttribute="leadingMargin" constant="10" id="2E0-w0-3xD"/>
                             <constraint firstItem="C4L-pE-ITe" firstAttribute="top" secondItem="AgV-Mr-IEx" secondAttribute="bottom" id="7G2-lE-Q9n"/>
-                            <constraint firstItem="W1s-Ik-JOv" firstAttribute="top" secondItem="C4L-pE-ITe" secondAttribute="bottom" constant="20" id="PHt-8X-FM2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="C4L-pE-ITe" secondAttribute="trailing" constant="10" id="SAb-op-jcD"/>
+                            <constraint firstItem="W1s-Ik-JOv" firstAttribute="top" secondItem="C4L-pE-ITe" secondAttribute="bottom" id="7r0-v3-mCA"/>
+                            <constraint firstItem="C4L-pE-ITe" firstAttribute="leading" secondItem="ghO-bx-AeC" secondAttribute="leadingMargin" constant="-5" id="8UG-Nt-WnL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C4L-pE-ITe" secondAttribute="trailing" constant="-5" id="Y43-vH-Dlc"/>
                             <constraint firstAttribute="centerX" secondItem="C4L-pE-ITe" secondAttribute="centerX" constant="-0.5" id="hWV-DR-mgk"/>
                             <constraint firstItem="C4L-pE-ITe" firstAttribute="top" secondItem="AgV-Mr-IEx" secondAttribute="bottom" id="nf2-CH-nmj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="hWV-DR-mgk"/>
                                 <exclude reference="nf2-CH-nmj"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="C4L-pE-ITe" id="m3z-yj-fx1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fb-oH-uPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
